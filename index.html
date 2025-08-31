@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarun Gangadhar — Homepage</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
+  <!-- Academicons for Google Scholar icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css" />
+</head>
+
+<body>
+  <!-- ==================== NAVBAR ==================== -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <div class="brand">
+        <!-- made clickable -->
+        <a href="#home" id="brand-home" class="brand-title">Tarun Gangadhar’s Homepage</a>
+      </div>
+
+      <nav class="primary-nav" id="desktop-nav">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#publications">Publications</a></li>
+        </ul>
+      </nav>
+
+      <div class="right-actions">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Dark/Light mode">
+          <span class="sun">☀</span><span class="moon">🌙</span>
+        </button>
+        <button id="hamburger" class="icon-btn hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="#home" class="mnav-item">Home</a>
+      <a href="#experience" class="mnav-item">Experience</a>
+      <a href="#projects" class="mnav-item">Projects</a>
+      <a href="#publications" class="mnav-item">Publications</a>
+    </nav>
+  </header>
+
+  <!-- ==================== HERO / HOME ==================== -->
+  <main id="home" class="hero">
+    <div class="container hero-grid">
+      <!-- Left: avatar + controls -->
+      <div class="hero-left">
+        <!-- Hidden until model is revealed by script.js -->
+        <button id="view-toggle-btn" class="view-toggle" type="button" aria-pressed="false">
+          Click to view 3D model of me
+        </button>
+
+        <div class="avatar-frame">
+          <div id="ply-viewer"></div>
+        </div>
+
+        <!-- Reserved line so your name doesn't jump; script toggles visibility -->
+        <div id="model-hint" class="render-hint">Drag / Swipe to rotate · Scroll / Pinch to zoom</div>
+
+        <div class="identity">
+          <h1 class="name">Tarun Gangadhar Vadaparthi</h1>
+          <p class="role">MS Student in Computer Science </p>
+          <p class="role">University at Buffalo </p>
+
+          <!-- Icon row: Email · LinkedIn · GitHub · Google Scholar · CV -->
+          <nav class="social-icons" aria-label="Social links">
+            <!-- Email (Gmail compose) -->
+            <a
+  href="mailto:vtarungangadhar@gmail.com"
+  aria-label="Email" title="Email"
+  rel="noopener"
+  target="_self"  
+>
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <rect x="3" y="5" width="18" height="14" rx="2" ry="2"
+          fill="none" stroke="currentColor" stroke-width="2"/>
+    <path d="M4 7l8 6 8-6" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/vtg1129/" target="_blank" rel="noopener"
+               aria-label="LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0zM8 8h4.7v2.2h.07c.65-1.23 2.25-2.53 4.63-2.53 4.95 0 5.86 3.26 5.86 7.5V24h-5V16.6c0-1.76-.03-4.02-2.45-4.02-2.46 0-2.84 1.92-2.84 3.9V24H8z"/>
+              </svg>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/tarungangadhar" target="_blank" rel="noopener"
+               aria-label="GitHub" title="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.35-1.78-1.35-1.78-1.1-.75.09-.74.09-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.86 2.84 1.32 3.53 1 .11-.78.42-1.32.76-1.62-2.67-.3-5.47-1.33-5.47-5.9 0-1.3.47-2.37 1.24-3.21-.12-.3-.54-1.51.12-3.15 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.64.24 2.85.12 3.15.77.84 1.24 1.9 1.24 3.2 0 4.58-2.8 5.6-5.48 5.9.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.83.58A12 12 0 0 0 12 .5z"/>
+              </svg>
+            </a>
+
+            <!-- Google Scholar (Academicons) -->
+            <a href="https://scholar.google.com/citations?user=Z967hFwAAAAJ&hl=en target="_blank" rel="noopener"
+               aria-label="Google Scholar" title="Google Scholar" class="ai-link">
+              <i class="ai ai-google-scholar" aria-hidden="true"></i>
+            </a>
+
+            <!-- CV chip -->
+            <a href="./assets/TARUN-ACADEMIC-CV.pdf" class="cv" aria-label="CV" title="CV" target="_blank" rel="noopener">CV</a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Right: About + two cards -->
+      <div class="hero-right">
+        <section class="panel about">
+          <h2>About</h2>
+          <p>
+          I am a Master’s student in Computer Science and Engineering at the University at Buffalo, 
+      focusing on Artificial Intelligence and Machine Learning, particularly in neural rendering and computer vision. <br />
+      
+      Prior to this, I received my B.Tech in Electrical and Electronics Engineering 
+      from NIT Nagpur in 2024. During my undergraduate studies, I was fortunate to be advised by 
+<a href="https://vnit.ac.in/engineering/electrical/dr-s-s-bhat/" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   style="color:blue; text-decoration:underline;">
+   Dr. S. S. Bhat
+</a>
+
+where I worked on a Global Grid project funded by SPARC.
+          </p>
+          <p>
+      Please reach me through my mail: 
+      <span style="color:red">vtarungangadhar[AT]gmail[DOT]com</span>.
+          </p>
+        </section>
+
+        <div class="cols-2">
+          <!-- Interests -->
+          <section class="panel">
+            <h3>Interests</h3>
+            <ul class="bullets interests-list">
+              <li>Neural Rendering</li>
+              <li>2D & 3D Computer Vision</li>
+               <li>3D Reconstruction</li>
+              <li>Computer Graphics</li>
+              <li>Machine Learning</li>
+            </ul>
+          </section>
+
+          <section class="panel">
+            <h3>Education</h3>
+
+            <!-- Two-line items with cap icon (styled via CSS) -->
+            <ul class="edu-list">
+              <li class="edu-item">
+                <div class="edu-top">MS in Computer Science, 2024 – 2025</div>
+                <div class="edu-school">University at Buffalo, USA</div>
+              </li>
+              <li class="edu-item">
+                <div class="edu-top">Summer School (Oniste) in AI & ML, 2023</div>
+                <div class="edu-school">University of Oxford, UK</div>
+              </li>
+              <li class="edu-item">
+                <div class="edu-top">B.Tech in Electrical Engineering, 2020 – 2024</div>
+                <div class="edu-school">NIT Nagpur, India</div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+ <!-- ==================== EXPERIENCE (cards) ==================== -->
+<section id="experience" class="band">
+  <div class="container section">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="exp-list">
+
+      <!-- Clair Engineers -->
+      <article class="exp-card" style="--brand:#16a34a">
+        <!-- Make the logo clickable -->
+        <a class="exp-logo" href="https://clair.in/" target="_blank" rel="noopener" aria-label="Clair Engineers">
+          <img src="./assets/clair.png" alt="Clair logo">
+        </a>
+        <div class="exp-body">
+          <h3 class="exp-role">Machine Learning Engineer Intern</h3>
+          <!-- Blue, clickable company name -->
+          <a class="exp-company" href="https://clair.in/" target="_blank" rel="noopener">Clair Engineers</a>
+          <div class="exp-meta">
+            <span>May 2025 – Aug 2025</span>
+            <span class="dot"></span>
+            <span>Remote</span>
+          </div>
+          <p class="exp-desc">
+            At Clair Engineers I built a machine learning tool that connects with AutoCAD. It takes client
+            inputs such as dimensions and specifications and automatically produces mechanical drawings.
+            This cut down repetitive drafting work and helped the design team finish tasks more quickly and
+            accurately.
+          </p>
+        </div>
+      </article>
+
+      <!-- VNIT -->
+      <article class="exp-card" style="--brand:#16a34a">
+        <a class="exp-logo" href="https://vnit.ac.in/" target="_blank" rel="noopener" aria-label="VNIT">
+          <img src="./assets/vnit.png" alt="VNIT logo">
+        </a>
+        <div class="exp-body">
+          <h3 class="exp-role">Research Assistant</h3>
+          <a class="exp-company" href="https://vnit.ac.in/" target="_blank" rel="noopener">
+            Visvesvaraya National Institute of Technology
+          </a>
+          <div class="exp-meta">
+            <span>Aug 2023 – May 2024</span>
+            <span class="dot"></span>
+            <span>Nagpur, India</span>
+          </div>
+          <p class="exp-desc">
+            In my final year undergrad I worked on a SPARC-funded Global Grid project. My work involved
+            developing a Python-based compiler and parser to speed up model processing and integrating
+            multiple solver APIs including Gurobi and CPLEX. With optimization techniques in NumPy, SciPy,
+            and multiprocessing, solver runtimes were improved by more than 25 percent.
+          </p>
+        </div>
+      </article>
+
+      <!-- Hitachi Solutions -->
+      <article class="exp-card" style="--brand:#16a34a">
+        <a class="exp-logo" href="https://global.hitachi-solutions.com/" target="_blank" rel="noopener" aria-label="Hitachi Solutions">
+          <img src="./assets/hitachi.jpeg" alt="Hitachi logo">
+        </a>
+        <div class="exp-body">
+          <h3 class="exp-role">Data Engineer Intern</h3>
+          <a class="exp-company" href="https://global.hitachi-solutions.com/" target="_blank" rel="noopener">
+            Hitachi Solutions
+          </a>
+          <div class="exp-meta">
+            <span>May 2022 – Aug 2022</span>
+            <span class="dot"></span>
+            <span>Hyderabad, India</span>
+          </div>
+          <p class="exp-desc">
+            At Hitachi I worked with Microsoft Azure to improve data pipelines for Canadian projects. I
+            analyzed SQL control tables and added over fifty new data points that helped the sales team get
+            better insights. I also set up Azure Data Factory and Logic Apps workflows along with a CI/CD
+            pipeline that made recurring data operations faster and easier to manage.
+          </p>
+        </div>
+      </article>
+
+      <!-- Verticross India -->
+      <article class="exp-card" style="--brand:#16a34a">
+        <a class="exp-logo" href="https://www.verticross.in/index.html" target="_blank" rel="noopener" aria-label="Verticross India">
+          <img src="./assets/vipl.png" alt="VIPL logo">
+        </a>
+        <div class="exp-body">
+          <h3 class="exp-role">Data Science Intern</h3>
+          <a class="exp-company" href="https://www.verticross.in/index.html" target="_blank" rel="noopener">
+            Verticross India
+          </a>
+          <div class="exp-meta">
+            <span>May 2021 – Dec 2021</span>
+            <span class="dot"></span>
+            <span>Hyderabad, India</span>
+          </div>
+          <p class="exp-desc">
+            At Verticross I contributed to cross-industry data science solutions across power, oil and gas,
+            and environmental sectors. I built data pipelines for collecting and preprocessing sensor data,
+            and developed predictive models for anomaly detection and asset maintenance. These models
+            provided actionable insights for real-time infrastructure monitoring, helping reduce downtime and
+            improve operational efficiency in industrial settings.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- ==================== PROJECTS (band) ==================== -->
+  <section id="projects" class="band">
+    <div class="container section">
+      <h2 class="section-title">Projects</h2>
+
+      <h3 class="year-heading">2025</h3>
+
+      <article class="pubrow">
+        <figure class="pubmedia">
+          <a href="https://tarungangadhar.github.io/PhysGSLiteWebsite/" target="_blank" rel="noopener" aria-label="Open PhysGs  website">
+            <video autoplay loop muted playsinline poster="./assets/phy-thumb.png">
+              <source src="./assets/phy.mp4" type="video/mp4" />
+            </video>
+          </a>
+        </figure>
+        <div class="pubinfo">
+          <h4 class="pubtitle">Phys-GS Lite: Material-Aware Dynamic Gaussian Splatting </h4>
+          <p class="pubdesc">
+            Phys-GS Lite is a lightweight prototype that augments 3D Gaussian Splatting with semantic separation and physics-inspired dynamics. Using simple geometry-driven heuristics, the method distinguishes between rigid and deformable regions . A sinusoidal wind field introduces wave-like deformation, while graph Laplacian smoothing ensures coherent motion.
+          </p>
+          <div class="publinks">
+            <a href="https://tarungangadhar.github.io/PhysGSLiteWebsite/" target="_blank" rel="noopener">Website</a>
+            <span>·</span>
+            <a href="https://github.com/tarungangadhar/PhysGSLite" target="_blank" rel="noopener">GitHub</a>
+            <span>·</span>
+            <a href="./assets/PhysGSLite.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pubrow">
+        <figure class="pubmedia">
+          <a href="https://tarungangadhar.github.io/semantic-fusion-website/" target="_blank" rel="noopener" aria-label="Open Semantic Fusion website">
+            <img src="./assets/semantic.png" alt="Semantic Fusion preview" />
+          </a>
+        </figure>
+        <div class="pubinfo">
+          <h4 class="pubtitle">Semantic Fusion for 3D Gaussian Splatting </h4>
+          <p class="pubdesc">
+              Enhanced 3D Gaussian Splatting with semantic awareness by fusing 2D SAM segmentations through multi-view voting, producing semantically labeled splats for object-aware rendering and editing on the Playroom dataset without requiring 3D annotations.
+          </p>
+          <div class="publinks">
+            <a href="https://tarungangadhar.github.io/semantic-fusion-website/" target="_blank" rel="noopener">Website</a>
+            <span>·</span>
+            <a href="https://github.com/tarungangadhar/semantic-fusion-3dgs" target="_blank" rel="noopener">GitHub</a>
+            <span>·</span>
+            <a href="./assets/SemanticFusionGS.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pubrow">
+        <figure class="pubmedia">
+          <a href="https://tarungangadhar.github.io/hybrid-pruning-3dgs-website/" target="_blank" rel="noopener" aria-label="Open Hybrid Pruning website">
+            <video autoplay loop muted playsinline poster="./assets/hybrid-thumb.png">
+              <source src="./assets/demo.mp4" type="video/mp4" />
+            </video>
+          </a>
+        </figure>
+        <div class="pubinfo">
+          <h4 class="pubtitle">Hybrid Pruning for 3D Gaussian Splatting </h4>
+          <p class="pubdesc">
+            Practical framework to prune 3D Gaussian Splatting scenes using a hybrid ranking signal (SH energy, multi-view projected area, visibility, local density) with robust normalization and simple post-cleanup.
+          </p>
+          <div class="publinks">
+            <a href="https://tarungangadhar.github.io/hybrid-pruning-3dgs-website/" target="_blank" rel="noopener">Website</a>
+            <span>·</span>
+            <a href="https://github.com/tarungangadhar/hybrid-pruning-3dgs" target="_blank" rel="noopener">GitHub</a>
+            <span>·</span>
+            <a href="./assets/HybridPruningFramework.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pubrow">
+        <figure class="pubmedia">
+          <a href="https://tarungangadhar.github.io/UnpairedDayToNightWebsite/" target="_blank" rel="noopener" aria-label="Open UnpairedDayToNight  website">
+            <img src="./assets/dton.png" alt="UnpairedDayToNight  preview" />
+          </a>
+        </figure>
+        <div class="pubinfo">
+          <h4 class="pubtitle">Day-to-Night Translation using CycleGAN </h4>
+          <p class="pubdesc">
+              This project explores unpaired image-to-image translation for converting daytime driving scenes into nighttime equivalents using CycleGAN. Unlike paired supervised methods, CycleGAN leverages cycle-consistency and adversarial training to learn mappings between Day ↔ Night domains without requiring aligned image pairs.
+          </p>
+          <div class="publinks">
+            <a href="https://tarungangadhar.github.io/UnpairedDayToNightWebsite/" target="_blank" rel="noopener">Website</a>
+            <span>·</span>
+            <a href="https://github.com/tarungangadhar/UnpairedDayToNight" target="_blank" rel="noopener">GitHub</a>
+            <span>·</span>
+            <a href="./assets/UnpairedDayToNight.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pubrow">
+        <figure class="pubmedia">
+          <a href="https://tarungangadhar.github.io/VideoStabilizationWebsite/" target="_blank" rel="noopener" aria-label="Open VideoStabilization website">
+            <video autoplay loop muted playsinline poster="./assets/dlpro-thumb.png">
+              <source src="./assets/dlpro.mov" type="video/mp4" />
+            </video>
+          </a>
+        </figure>
+        <div class="pubinfo">
+          <h4 class="pubtitle"> Deep Learning Based Video Stabilization (RAFT + BiLSTM/Transformer/GRU)</h4>
+          <p class="pubdesc">
+            Built a deep learning framework for video stabilization using RAFT-based optical flow to extract dense motion and sequence models including BiLSTM, Transformer, and GRU for temporal smoothing.
+          </p>
+          <div class="publinks">
+            <a href="https://tarungangadhar.github.io/VideoStabilizationWebsite/" target="_blank" rel="noopener">Website</a>
+            <span>·</span>
+            <a href="https://github.com/tarungangadhar/VideoStabilization" target="_blank" rel="noopener">GitHub</a>
+            <span>·</span>
+            <a href="./assets/VideoStabilization.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </div>
+      </article>
+
+      <h3 class="year-heading">2024</h3>
+      <article class="pubrow">
+        <figure class="pubmedia">
+          <a href="https://tarungangadhar.github.io/uncertainty-aware-3dgs-website/" target="_blank" rel="noopener" aria-label="Open UncertainityAwareGS website">
+            <video autoplay loop muted playsinline poster="./assets/uncer-thumb.png">
+              <source src="./assets/uncertainityvideo.mp4" type="video/mp4" />
+            </video>
+          </a>
+        </figure>
+        <div class="pubinfo">
+          <h4 class="pubtitle">Uncertainty Aware 3D Gaussian Splatting </h4>
+          <p class="pubdesc">
+            Developed an uncertainty-aware diagnostic for 3D Gaussian Splatting by estimating per-splat visibility variance across multi-view renders, producing heatmaps that highlight unstable or low-confidence regions without retraining.
+          </p>
+          <div class="publinks">
+            <a href="https://tarungangadhar.github.io/uncertainty-aware-3dgs-website/" target="_blank" rel="noopener">Website</a>
+            <span>·</span>
+            <a href="https://github.com/tarungangadhar/uncertainty-aware-3dgs" target="_blank" rel="noopener">GitHub</a>
+            <span>·</span>
+            <a href="./assets/UncertainityAwareGS.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pubrow">
+        <figure class="pubmedia">
+          <a href="https://tarungangadhar.github.io/tree-planting-sites-website/" target="_blank" rel="noopener" aria-label="Open Tree Planting website">
+            <img src="./assets/cluster_map.png" alt="tree-planting-sites preview" />
+          </a>
+        </figure>
+        <div class="pubinfo">
+          <h4 class="pubtitle">Data-Driven Identification of Optimal Urban Tree Planting Sites</h4>
+          <p class="pubdesc">
+            Developed a data-driven framework to identify optimal urban tree planting sites in Buffalo, NY using over 133,000 records from the Bureau of Forestry dataset. Applied clustering, regression, and decision tree models alongside geospatial visualization to uncover eco-benefit gaps and highlight priority zones. Produced interactive heatmaps and maps that provide actionable insights for sustainable urban forestry planning.
+          </p>
+          <div class="publinks">
+            <a href="https://tarungangadhar.github.io/tree-planting-sites-website/" target="_blank" rel="noopener">Website</a>
+            <span>·</span>
+            <a href="https://github.com/tarungangadhar/tree-planting-sites" target="_blank" rel="noopener">GitHub</a>
+            <span>·</span>
+            <a href="./assets/ReportTree.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pubrow">
+        <figure class="pubmedia">
+          <a href="https://twomicrogrid.netlify.app/" target="_blank" rel="noopener" aria-label="Two Microgrid Simulation">
+            <img src="./assets/Microgrid.png" alt="twomicrogrid preview" />
+          </a>
+        </figure>
+        <div class="pubinfo">
+          <h4 class="pubtitle">Developing Optimization Algorithms for Global Grid using Python-based GBOML</h4>
+          <p class="pubdesc">
+            Developed optimization algorithms for microgrids and interconnected global grids using the Graph-Based Optimization Modeling Language (GBOML) in Python. Modeled solar, battery, and demand nodes, integrating multiple solvers including Pyomo, PuLP, SciPy, and Gurobi to evaluate performance.
+          </p>
+          <div class="publinks">
+            <a href="https://twomicrogrid.netlify.app/" target="_blank" rel="noopener">Simulation</a>
+            <span>·</span>
+            <a href="https://github.com/tarungangadhar/gboml-global-grid" target="_blank" rel="noopener">GitHub</a>
+            <span>·</span>
+            <a href="./assets/GBOML.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pubrow">
+        <figure class="pubmedia">
+          <a href="https://tarungangadhar.github.io/MonthlyUnitsPredictionWebsite/" target="_blank" rel="noopener" aria-label="ElectricConsumptionPredictionWebsite">
+            <img src="./assets/Elec.png" alt="MonthlyUnitsPrediction" />
+          </a>
+        </figure>
+        <div class="pubinfo">
+          <h4 class="pubtitle">Electricity Consumption Prediction and Billing Analysis using Machine Learning</h4>
+          <p class="pubdesc">
+            Developed a machine learning framework for electricity consumption forecasting using 12 years of quarter-wise campus data, applying linear and polynomial regression models after rigorous data cleaning and feature engineering.
+          </p>
+          <div class="publinks">
+            <a href="https://tarungangadhar.github.io/MonthlyUnitsPredictionWebsite/" target="_blank" rel="noopener">Website</a>
+            <span>·</span>
+            <a href="https://github.com/tarungangadhar/MonthlyUnitsPrediction" target="_blank" rel="noopener">GitHub</a>
+            <span>·</span>
+            <a href="./assets/ElectricityConsumptionPrediction.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </div>
+      </article>
+
+      <h3 class="year-heading">2023</h3>
+      <article class="pubrow">
+        <figure class="pubmedia">
+          <a href="https://huggingface.co/spaces/vtarungangadhar/Movie_Locus" target="_blank" rel="noopener" aria-label="Movie_Locus">
+            <img src="./assets/Example.png" alt="Movie Recommendatoin System" />
+          </a>
+        </figure>
+        <div class="pubinfo">
+          <h4 class="pubtitle">Movie Recommendatoin System</h4>
+          <p class="pubdesc">
+            An interactive movie recommendation system built with Streamlit. It suggests similar movies based on content features using a cosine similarity approach on preprocessed movie embeddings.
+          </p>
+          <div class="publinks">
+            <a href="https://huggingface.co/spaces/vtarungangadhar/Movie_Locus" target="_blank" rel="noopener">Website</a>
+            <span>·</span>
+            <a href="https://github.com/tarungangadhar/movielocus" target="_blank" rel="noopener">GitHub</a>
+            <span>·</span>
+            <a href="./assets/MovieRecommendationSystem.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </div>
+      </article>
+
+      <h3 class="year-heading">2022</h3>
+      <article class="pubrow">
+        <figure class="pubmedia">
+          <a href="https://huggingface.co/spaces/vtarungangadhar/LTICResponseVisualizer" target="_blank" rel="noopener" aria-label="LTICResponseVisualizer">
+            <img src="./assets/LTIC.png" alt="LTICResponseVisualizer" />
+          </a>
+        </figure>
+        <div class="pubinfo">
+          <h4 class="pubtitle">LTIC Response Visualizer</h4>
+          <p class="pubdesc">
+            Built a Streamlit web application to compute and visualize zero-input, impulse, step, and total responses of first- and second-order LTI systems, integrating SymPy for symbolic derivation and NumPy/Matplotlib for simulation with deployment on Hugging Face Spaces.
+          </p>
+          <div class="publinks">
+            <a href="https://huggingface.co/spaces/vtarungangadhar/LTICResponseVisualizer" target="_blank" rel="noopener">Website</a>
+            <span>·</span>
+            <a href="https://github.com/tarungangadhar/OutputGraphGenerator" target="_blank" rel="noopener">GitHub</a>
+            <span>·</span>
+            <a href="./assets/OgGenerator.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+<!-- ==================== PUBLICATIONS (band) ==================== -->
+<section id="publications" class="band">
+  <div class="container section">
+    <h2 class="section-title">Publications</h2>
+
+    <div class="pubs">
+
+      <!-- Paper 1 -->
+      <article class="pub">
+        <h3 class="pub-title">
+          Cost Optimization of Renewable Energy Installation in a Four-Microgrid System Using GBOML
+          <a href="./assets/2025165074.pdf" target="_blank" rel="noopener">[pdf]</a>
+        </h3>
+        <p class="pub-authors">
+          Bimal Kumar Dora, Tarun Gangadhar, Arghya Mitra, Nidhi Haribhau Gaikwad,
+          Ruchita Sunil Waghmare, Damien Ernst, Pranjali Kulkarni, Sudip Halder, Sunil Bhat
+        </p>
+        <p class="pub-meta">IEEE, 2025</p>
+      </article>
+
+      <!-- Paper 2 -->
+      <article class="pub">
+        <h3 class="pub-title">
+          Solution of Optimal Power Flow Problems Using Enhanced Hunter-Pray Optimization Algorithm
+          <a href="./assets/Solution_of_Optimal_Power_Flow_Problems_Using_Enhanced_Hunter_Pray_Optimization_Algorithm.pdf" target="_blank" rel="noopener">[pdf]</a>
+        </h3>
+        <p class="pub-authors">
+          Bimal Kumar Dora, Sudip Halder, Ruchita Sunil Waghmare,
+          Tarun Gangadhar, Pranjali Kulkarni, Sunil Bhat
+        </p>
+        <p class="pub-meta">IEEE ICPEICES, 2024</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© Tarun Gangadhar · Built with vanilla HTML/CSS/JS + three.js</p>
+    </div>
+  </footer>
+
+  <!-- three.js import map -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.156.1/build/three.module.js"
+    }
+  }
+  </script>
+
+  <!-- App script -->
+  <script type="module" src="script.js"></script>
+
+  <!-- Small UI script: theme, hamburger, brand→home refresh -->
+ <script>
+  (function(){
+    const btn = document.getElementById('theme-toggle');
+    const hamburger = document.getElementById('hamburger');
+    const mobile = document.getElementById('mobile-nav');
+
+    // Default to dark unless a prior preference exists
+    (function setInitialTheme(){
+      const saved = localStorage.getItem('themeDark');
+      if (saved === '1' || saved === null) {
+        document.documentElement.setAttribute('data-theme-dark','');
+        if (saved === null) localStorage.setItem('themeDark','1');
+      }
+    })();
+
+    // Stop the browser from restoring the old scroll position on reload
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    // If we just reloaded from a brand click, jump to #home on load
+    window.addEventListener('load', () => {
+      if (sessionStorage.getItem('goHome') === '1') {
+        sessionStorage.removeItem('goHome');
+        // Ensure the URL shows #home and scroll there
+        if (location.hash !== '#home') location.hash = '#home';
+        const homeEl = document.getElementById('home');
+        if (homeEl) {
+          homeEl.scrollIntoView({ behavior: 'auto', block: 'start' });
+        } else {
+          window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+        }
+      }
+    });
+
+    btn?.addEventListener('click', () => {
+      document.documentElement.toggleAttribute('data-theme-dark');
+      localStorage.setItem(
+        'themeDark',
+        document.documentElement.hasAttribute('data-theme-dark') ? '1' : '0'
+      );
+    });
+
+    hamburger?.addEventListener('click', () => {
+      mobile.classList.toggle('open');
+    });
+    mobile.querySelectorAll('a')
+      .forEach(a => a.addEventListener('click', () => mobile.classList.remove('open')));
+
+    // Brand click → mark intent, set #home, then reload
+    const brandHome = document.getElementById('brand-home');
+    brandHome?.addEventListener('click', (e) => {
+      e.preventDefault();
+      sessionStorage.setItem('goHome', '1');
+      if (location.hash !== '#home') {
+        location.hash = '#home';
+      }
+      location.reload();
+    });
+  })();
+</script>
+
+</body>
+</html>
